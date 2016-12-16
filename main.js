@@ -116,18 +116,18 @@ screen.addEventListener('click', function(e) {
 document.body.onkeyup = function(e){
     if(e.keyCode == 65){
         bgTones('C','E','G');
-        TweenMax.to(screen, 1, {backgroundColor:'#A3E9B8', ease: Linear.easeInOut})
-        TweenMax.to(screen, .5, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
+        TweenMax.to(screen, .1, {backgroundColor:'#A3E9B8', ease: Linear.easeInOut})
+        TweenMax.to(screen, 1, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
     }
     if(e.keyCode == 83){
         bgTones('E', 'G' , 'B');
-        TweenMax.to(screen, 1, {backgroundColor:'#E6B7E0', ease: Linear.easeInOut})
-        TweenMax.to(screen, .5, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
+        TweenMax.to(screen, .1, {backgroundColor:'#E6B7E0', ease: Linear.easeInOut})
+        TweenMax.to(screen, 1, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
     }
     if(e.keyCode == 68){
         bgTones('F', 'A' , 'C');
-        TweenMax.to(screen, 1, {backgroundColor:'#97D7E7', ease: Linear.easeInOut})
-        TweenMax.to(screen, .5, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
+        TweenMax.to(screen, .1, {backgroundColor:'#97D7E7', ease: Linear.easeInOut})
+        TweenMax.to(screen, 1, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
     }
 
 }
