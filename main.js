@@ -14,6 +14,7 @@ var delay = new Tone.FeedbackDelay(1);
 var pingPong = new Tone.PingPongDelay("4n", 0.2).toMaster();
 var filter = new Tone.Filter(200, "lowpass");
 var polySynth = new Tone.PolySynth(6, Tone.Synth).connect(reverb, filter, pingPong);
+var polySynth_2 = new Tone.PolySynth(6, Tone.Synth).connect(reverb, filter, pingPong);
 		
 		
 		
@@ -30,9 +31,33 @@ polySynth.set({
 	"sustain" : 0,
 	"release" : 0,
 	}
-    }, 'polyphony', 3)
+    }, 'polyphony', 7)
 
-////////////////////////////		
+polySynth_2.volume.value = -20;
+polySynth_2.set({
+	"oscillator" : {
+	"type" : "sine",
+	"modulationFrequency" : 0.5
+	},
+	"envelope" : {
+	"attack" : 0.1,
+	"decay" : 0.1,
+	"sustain" : 0,
+	"release" : 0,
+	}
+    }, 'polyphony', 7)
+
+
+
+////////////////////////////	
+
+function bgTones(scale, tone2, tone3) {
+	polySynth_2.triggerAttackRelease(scale + "2");
+	polySynth_2.triggerAttackRelease(scale + "3");
+	polySynth_2.triggerAttackRelease(tone2 + "4");
+	polySynth_2.triggerAttackRelease(tone3 + "4");
+	
+}	
 
 function init() {
 	//set size of screen
@@ -87,4 +112,23 @@ screen.addEventListener('click', function(e) {
 	//Play note	
 	polySynth.triggerAttackRelease(notes[getRandomInt(0, notes.length)]);
 });
+//Spacebar event 
+document.body.onkeyup = function(e){
+    if(e.keyCode == 65){
+        bgTones('C','E','G');
+        TweenMax.to(screen, 1, {backgroundColor:'#A3E9B8', ease: Linear.easeInOut})
+        TweenMax.to(screen, .5, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
+    }
+    if(e.keyCode == 83){
+        bgTones('E', 'G' , 'B');
+        TweenMax.to(screen, 1, {backgroundColor:'#E6B7E0', ease: Linear.easeInOut})
+        TweenMax.to(screen, .5, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
+    }
+    if(e.keyCode == 68){
+        bgTones('F', 'A' , 'C');
+        TweenMax.to(screen, 1, {backgroundColor:'#97D7E7', ease: Linear.easeInOut})
+        TweenMax.to(screen, .5, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
+    }
+
+}
 
