@@ -50,7 +50,7 @@ var WIDTH = window.innerWidth;
 		    "envelope" : {
 		        "attack" : 0.1,
 		        "decay" : 0.1,
-		        "sustain" : 0.001,
+		        "sustain" : 0.0001,
 		        "release" : 0.001,
 		    }
 		    
