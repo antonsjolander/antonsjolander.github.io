@@ -11,9 +11,19 @@
 		}
 		#myScreen{
 			box-sizing: border-box;
-			background: #fff;
-			padding: 20px; 
+			background: #E5E5E5;
+			
 			overflow: hidden;
+		}
+		.border{
+			width: 100%;
+			height: 100%;
+			border: 20px solid #fff;
+			box-sizing: border-box;
+			position: absolute;
+   			z-index: 1000;
+    		top: 0;
+    		pointer-events: none;
 		}
 	</style>
 
@@ -25,8 +35,10 @@
 	<div id="myScreen">
 		
 	</div>
+	<div class="border"></div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 	<script src="https://tonejs.github.io/CDN/latest/Tone.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js"></script>
 	<script src="main.js"> </script>
 </body>
 </html>
