@@ -8,12 +8,34 @@
 		body{
 			margin: 0;
 			padding: 0;
+			font-family: helvetica;
+			font-weight: 100;
+			color:#fff;
+			font-size: 100%;
 		}
 		#myScreen{
 			box-sizing: border-box;
 			background: #E5E5E5;
 			
 			overflow: hidden;
+		}
+		#startScreen{
+			box-sizing: border-box;
+			background: #E5E5E5;
+			position: absolute;
+			overflow: hidden;
+			
+			top:0;
+			z-index: 900;
+		}
+		#if_mobile{
+			box-sizing: border-box;
+			background: #E5E5E5;
+			position: absolute;
+			overflow: hidden;
+			display: none;
+			top:0;
+			z-index: 950;
 		}
 		.border{
 			width: 100%;
@@ -25,6 +47,37 @@
     		top: 0;
     		pointer-events: none;
 		}
+		.instruct{
+			bottom: 10px;
+			right:30px;
+			position:absolute;
+		}
+		.title{
+			top: 10px;
+			left:30px;
+			position:absolute;
+		}
+		#text_box{
+			position: absolute;
+			width: 1000px;
+			height: 500px;
+			text-align: center;
+			font-size: 40px;
+			padding: 20px;
+		}
+		#txt{
+			
+			margin-top: 150px;
+   			margin-bottom: 150px;
+		}
+		#txt_1{
+			opacity: 0;
+		}
+		#txt_2{
+			opacity: 0;
+		}
+
+
 	</style>
 
 </head>
@@ -33,9 +86,26 @@
 <body>
 	
 	<div id="myScreen">
+		<div class="title">
+			<h3>SOUNDROPS</h3>
+		</div>
+		<div class="instruct">
+			<h3>CHORDS: "A  S  D"  CLICK TO PLAY NOTES</h3>
+		</div>
 		
 	</div>
+	<div id="startScreen">
+		<div id="text_box">
+			<div id="txt">
+				<h1 id="txt_1">SOUNDROPS</h1>
+				<h5 id="txt_2">USE HEASPHONES FOR BEST EXPERIENCE</h3>
+			</div>
+		</div>
+	</div>
 	<div class="border"></div>
+	<div id="if_mobile">
+		<h1>NO MOBILE SUPPORT - USE ON DESKTOP</h1>
+	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 	<script src="https://tonejs.github.io/CDN/latest/Tone.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/randomcolor/0.4.4/randomColor.min.js"></script>
