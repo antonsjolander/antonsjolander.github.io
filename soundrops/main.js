@@ -21,6 +21,7 @@ var mouseY;
 var main_tl = new TimelineMax();
 		
 //Set the synthesizer
+var context = new AudioContext();
 var reverb = new Tone.JCReverb(.9).connect(Tone.Master);
 	reverb.wet = 1;
 var delay = new Tone.FeedbackDelay(1); 
@@ -151,6 +152,9 @@ screen.addEventListener('click', function(e) {
 	createCirc(mouseX, mouseY )
 	//Play note	
 	polySynth.triggerAttackRelease(notes[getRandomInt(0, notes.length)]);
+	//Start audio on ios
+	
+	StartAudioContext(context, screen);
 });
 //Spacebar event 
 document.body.onkeyup = function(e){
