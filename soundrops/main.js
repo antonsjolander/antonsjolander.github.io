@@ -149,6 +149,7 @@ screen.addEventListener('click', function(e) {
 	mouseY = e.pageY;
 	mouseX = e.pageX;
 	//Append circle
+	e.preventDefault()
 	createCirc(mouseX, mouseY )
 	//Play note	
 	polySynth.triggerAttackRelease(notes[getRandomInt(0, notes.length)]);
