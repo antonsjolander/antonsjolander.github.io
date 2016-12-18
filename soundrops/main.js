@@ -10,6 +10,7 @@ var HEIGHT = window.innerHeight;
 var screen = document.getElementById('myScreen');
 var startScreen = document.getElementById('startScreen');
 var text_box = document.getElementById('text_box');
+var start_ios = document.getElementById('start_ios');
 
 var circColors = ['#FFA69E', '"FAF3DD' , '#87F5FB', '#DBD8F0' , '#52B2CF',  '#EED7C5']
 var notes = ['C5', 'D5', 'E5', 'F5', 'G5', 'A5', 'B5','C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4',]
@@ -86,7 +87,6 @@ init();
 function startAnimation() {
 	var txt_1 = document.getElementById('txt_1');
 	var txt_2 = document.getElementById('txt_2');
-	var start_ios = document.getElementById('start_ios');
 	if(isMobile === true){
 	TweenMax.to(txt_1, 3, {opacity:1 , ease: Power2.easeInOut})
 	TweenMax.to(txt_2, 3, {delay:2, opacity:1 , ease: Power2.easeInOut})
@@ -160,6 +160,9 @@ screen.addEventListener('click', function(e) {
 	
 	
 });
+start_ios.addEventListener('click', function() {
+	TweenMax.to(startScreen, 2, {delay:5.5, autoAlpha:0 , ease: Power2.easeInOut});
+})
 
 //Start sound on ios
 StartAudioContext(context, screen);
