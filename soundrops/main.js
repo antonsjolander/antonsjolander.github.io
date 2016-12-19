@@ -148,8 +148,9 @@ function getRandomInt(min, max) {
 	return Math.floor(Math.random() * (max - min)) + min;
 }
 
-//Click event		
-screen.addEventListener('click', function(e) {
+//Click event
+if(isMobile === true){
+	screen.addEventListener('mousedown', function(e) {
 	mouseY = e.pageY;
 	mouseX = e.pageX;
 	//Append circle
@@ -157,18 +158,32 @@ screen.addEventListener('click', function(e) {
 	createCirc(mouseX, mouseY )
 	//Play note	
 	polySynth.triggerAttackRelease(notes[getRandomInt(0, notes.length)]);
-	//Start audio on ios
+
+	
+});}else{		
+	screen.addEventListener('click', function(e) {
+	mouseY = e.pageY;
+	mouseX = e.pageX;
+	//Append circle
+	e.preventDefault()
+	createCirc(mouseX, mouseY )
+	//Play note	
+	polySynth.triggerAttackRelease(notes[getRandomInt(0, notes.length)]);
 	
 	
-});
+});}
+
 startScreen.addEventListener('click', function() {
 	TweenMax.to(startScreen, 2, {delay:5.5, autoAlpha:0 , ease: Power2.easeInOut});
+	console.log("touch")
 })
 
 //Start sound on ios
 StartAudioContext(Tone.context, '#startScreen').then(function(){
     //started
 })
+
+
 
 //Spacebar event 
 document.body.onkeyup = function(e){
