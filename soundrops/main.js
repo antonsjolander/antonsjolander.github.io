@@ -112,7 +112,7 @@ function createCirc(x, y) {
 	circle.style.height = circleSize + "px"
 	circle.style.top = y - (circleSize / 2) + "px";
 	circle.style.left = x - (circleSize / 2) + "px";
-	
+	circle.style.blendMode = "multiply"
 	//Circle animation	
 	TweenMax.from(circle, 1, {opacity:0, scale: 0.8, ease: Power1.easeOut})
 	TweenMax.to(circle, 5, {delay:1, opacity:0, scale:0 , ease: Power3.easeInOut, onComplete: removeDiv} )
