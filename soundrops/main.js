@@ -174,7 +174,7 @@ if(isMobile === true){
 });}
 
 startScreen.addEventListener('click', function() {
-	TweenMax.to(startScreen, 2, {delay:5.5, autoAlpha:0 , ease: Power2.easeInOut});
+	TweenMax.to(startScreen, 2, {autoAlpha:0 , ease: Power2.easeInOut});
 	console.log("touch")
 })
 
