@@ -7,6 +7,7 @@ if(/(android|bb\d+|meego).+mobile|avantgo|bada\/|blackberry|blazer|compal|elaine
 
 var WIDTH = window.innerWidth;
 var HEIGHT = window.innerHeight;
+var body = document.body;
 var screen = document.getElementById('myScreen');
 var startScreen = document.getElementById('startScreen');
 var text_box = document.getElementById('text_box');
@@ -189,6 +190,16 @@ function getRandomInt(min, max) {
 //Click event
 if(isMobile === true){
 	mobileChords();
+
+	$('.info').css('font-size','40px');
+	$('.info').css('top','-18px');
+	$('.title').css('font-size','40px');
+	$('.title').css('top','-18px');
+
+	TweenMax.set(".link",{autoAlpha:0});
+	TweenMax.set(".instruct",{autoAlpha:0});
+
+
 	screen.addEventListener('touchstart', function(e) {
 	mouseY = e.pageY;
 	mouseX = e.pageX;
@@ -222,7 +233,9 @@ StartAudioContext(Tone.context, '#startScreen').then(function(){
     //started
 })
 
+body.onfocus = function(){return false;}
 screen.onfocus = function(){return false;}
+startScreen.onfocus = function(){return false;}
 $('body').bind('touchmove', function(event) { event.preventDefault() });
 
 
