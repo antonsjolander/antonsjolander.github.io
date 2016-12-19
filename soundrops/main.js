@@ -192,9 +192,9 @@ if(isMobile === true){
 	mobileChords();
 
 	$('.info').css('font-size','40px');
-	$('.info').css('top','-18px');
+	$('.info').css('top','-20px');
 	$('.title').css('font-size','40px');
-	$('.title').css('top','-18px');
+	$('.title').css('top','-20px');
 
 	TweenMax.set(".link",{autoAlpha:0});
 	TweenMax.set(".instruct",{autoAlpha:0});
