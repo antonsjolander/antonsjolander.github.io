@@ -237,6 +237,7 @@ body.onfocus = function(){return false;}
 screen.onfocus = function(){return false;}
 startScreen.onfocus = function(){return false;}
 $('body').bind('touchmove', function(event) { event.preventDefault() });
+$('body').bind('touchend', function(event) { event.preventDefault() });
 
 
 //Spacebar event 
