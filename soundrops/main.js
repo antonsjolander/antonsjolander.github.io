@@ -150,7 +150,7 @@ function getRandomInt(min, max) {
 
 //Click event
 if(isMobile === true){
-	screen.addEventListener('mousedown', function(e) {
+	screen.addEventListener('touchstart', function(e) {
 	mouseY = e.pageY;
 	mouseX = e.pageX;
 	//Append circle
@@ -175,7 +175,7 @@ if(isMobile === true){
 
 startScreen.addEventListener('click', function() {
 	TweenMax.to(startScreen, 2, {autoAlpha:0 , ease: Power2.easeInOut});
-	console.log("touch")
+	
 })
 
 //Start sound on ios
