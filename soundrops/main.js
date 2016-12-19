@@ -221,7 +221,7 @@ StartAudioContext(Tone.context, '#startScreen').then(function(){
     //started
 })
 
-
+screen.onfocus = function(){return false;}
 
 
 
