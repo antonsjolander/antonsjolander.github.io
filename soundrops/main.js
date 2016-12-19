@@ -150,17 +150,17 @@ function mobileChords() {
 		bgTones('C','E','G');
         TweenMax.to(screen, .1, {backgroundColor:'#A3E9B8', ease: Linear.easeInOut})
         TweenMax.to(screen, 1, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
-	}
+	});
 	pink.addEventListener('touchstart', function(e){
 		bgTones('E', 'G' , 'B');
         TweenMax.to(screen, .1, {backgroundColor:'#E6B7E0', ease: Linear.easeInOut})
         TweenMax.to(screen, 1, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
-	}
+	});
 	blue.addEventListener('touchstart', function(e){
 		bgTones('F', 'A' , 'C');
         TweenMax.to(screen, .1, {backgroundColor:'#97D7E7', ease: Linear.easeInOut})
         TweenMax.to(screen, 1, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
-	}
+	});
 }	
 mobileChords();
 		
