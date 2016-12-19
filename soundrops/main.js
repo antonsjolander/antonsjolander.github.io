@@ -161,12 +161,12 @@ screen.addEventListener('click', function(e) {
 	
 	
 });
-start_ios.addEventListener('click', function() {
+startScreen.addEventListener('click', function() {
 	TweenMax.to(startScreen, 2, {delay:5.5, autoAlpha:0 , ease: Power2.easeInOut});
 })
 
 //Start sound on ios
-StartAudioContext(Tone.context, '#start_ios').then(function(){
+StartAudioContext(Tone.context, '#startScreen').then(function(){
     //started
 })
 
