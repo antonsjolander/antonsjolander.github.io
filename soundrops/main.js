@@ -11,7 +11,7 @@ var screen = document.getElementById('myScreen');
 var startScreen = document.getElementById('startScreen');
 var text_box = document.getElementById('text_box');
 var start_ios = document.getElementById('start_ios');
-
+var mobile_chords = document.getElementById('mobile_chords');
 var circColors = ['#FFA69E', '"FAF3DD' , '#87F5FB', '#DBD8F0' , '#52B2CF',  '#EED7C5']
 var notes = ['C5', 'D5', 'E5', 'F5', 'G5', 'A5', 'B5','C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4',]
 var mouseX;
@@ -78,7 +78,8 @@ function init() {
 	screen.style.height = HEIGHT + "px";
 	startScreen.style.width = WIDTH + "px";
 	startScreen.style.height = HEIGHT + "px";
-
+	mobile_chords.style.width = WIDTH + "px";
+	mobile_chords.style.height = HEIGHT / 8 + "px";
 	text_box.style.top = (HEIGHT/2) - (text_box.clientHeight/2) + "px";
 	text_box.style.left = (WIDTH/2) - (text_box.clientWidth/2) + "px";
 
@@ -124,7 +125,29 @@ function createCirc(x, y) {
 	}
 
 }
-
+function mobileChords() {
+	var green = document.createElement("div");
+	var pink = document.createElement("div");
+	var blue = document.createElement("div");
+	mobile_chords.appendChild(green);
+	mobile_chords.appendChild(pink);
+	mobile_chords.appendChild(blue);
+	green.style.backgroundColor = '#A3E9B8';
+	pink.style.backgroundColor = '#E6B7E0';
+	blue.style.backgroundColor = '#97D7E7';
+	blue.style.width = WIDTH/3 + "px"
+	pink.style.width = WIDTH/3 + "px"
+	green.style.width = WIDTH/3 + "px"
+	blue.style.height = mobile_chords.clientHeight + "px"
+	pink.style.height = mobile_chords.clientHeight + "px"
+	green.style.height = mobile_chords.clientHeight + "px"
+	blue.style.position = "absolute";
+	pink.style.position = "absolute";
+	green.style.position = "absolute";
+	pink.style.left = green.clientWidth + "px";
+	blue.style.left = pink.clientWidth + green.clientWidth + "px";
+}	
+mobileChords();
 		
 //Update screen size 
 window.addEventListener('resize', function() {
@@ -135,8 +158,8 @@ window.addEventListener('resize', function() {
 	screen.style.height = HEIGHT + "px";
 	startScreen.style.width = WIDTH + "px";
 	startScreen.style.height = HEIGHT + "px";
-
-
+	mobile_chords.style.width = WIDTH + "px";
+	mobile_chords.style.height = HEIGHT / 6 + "px";
 	text_box.style.top = (HEIGHT/2) - (text_box.clientHeight/2) + "px";
 	text_box.style.left = (WIDTH/2) - (text_box.clientWidth/2) + "px";
 });
@@ -158,10 +181,10 @@ if(isMobile === true){
 	createCirc(mouseX, mouseY )
 	//Play note	
 	polySynth.triggerAttackRelease(notes[getRandomInt(0, notes.length)]);
-
+	mobileChords();
 	
 });}else{		
-	screen.addEventListener('click', function(e) {
+	screen.addEventListener('mousedown', function(e) {
 	mouseY = e.pageY;
 	mouseX = e.pageX;
 	//Append circle
