@@ -169,6 +169,7 @@
 		}
 		bindTapListener(elements, tapListeners, context)
 
+		console.log("ios")
 		//dispose all these tap listeners when the context is started
 		promise.then(function(){
 			for (var i = 0; i < tapListeners.length; i++){

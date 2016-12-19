@@ -165,7 +165,9 @@ start_ios.addEventListener('click', function() {
 })
 
 //Start sound on ios
-StartAudioContext(context, start_ios);
+StartAudioContext(Tone.context, '#start_ios').then(function(){
+    //started
+})
 
 //Spacebar event 
 document.body.onkeyup = function(e){
