@@ -162,7 +162,7 @@ function mobileChords() {
         TweenMax.to(screen, 1, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
 	});
 }	
-mobileChords();
+
 		
 //Update screen size 
 window.addEventListener('resize', function() {
@@ -188,6 +188,7 @@ function getRandomInt(min, max) {
 
 //Click event
 if(isMobile === true){
+	mobileChords();
 	screen.addEventListener('touchstart', function(e) {
 	mouseY = e.pageY;
 	mouseX = e.pageX;
@@ -196,7 +197,7 @@ if(isMobile === true){
 	createCirc(mouseX, mouseY )
 	//Play note	
 	polySynth.triggerAttackRelease(notes[getRandomInt(0, notes.length)]);
-	mobileChords();
+	
 	
 });}else{		
 	screen.addEventListener('mousedown', function(e) {
