@@ -31,7 +31,7 @@ var polySynth_2 = new Tone.PolySynth(6, Tone.Synth).connect(reverb, filter, ping
 		
 		
 
-polySynth.volume.value = -20;
+polySynth.volume.value = -40;
 polySynth.set({
 	"oscillator" : {
 	"type" : "sine",
@@ -45,7 +45,7 @@ polySynth.set({
 	}
     }, 'polyphony', 7)
 
-polySynth_2.volume.value = -20;
+polySynth_2.volume.value = -40;
 polySynth_2.set({
 	"oscillator" : {
 	"type" : "sine",
@@ -59,6 +59,7 @@ polySynth_2.set({
 	}
     }, 'polyphony', 7)
 
+console.log(polySynth.volume.value,polySynth_2.volume.value )
 
 
 ////////////////////////////	
