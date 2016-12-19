@@ -223,7 +223,7 @@ StartAudioContext(Tone.context, '#startScreen').then(function(){
 })
 
 screen.onfocus = function(){return false;}
-
+$('body').bind('touchmove', function(event) { event.preventDefault() });
 
 
 //Spacebar event 
