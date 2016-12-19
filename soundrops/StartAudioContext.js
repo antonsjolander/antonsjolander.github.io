@@ -159,7 +159,7 @@
 		var promise = new Promise(function(success) {
 			onStarted(context, success)
 		})
-
+		
 		// The TapListeners bound to the elements
 		var tapListeners = []
 
