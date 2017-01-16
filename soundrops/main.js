@@ -220,14 +220,15 @@ if(isMobile === true){
 	//Play note	
 	polySynth.triggerAttackRelease(notes[getRandomInt(0, notes.length)]);
 	
+
 	
 });}
-
+if(isMobile === true){
 startScreen.addEventListener('click', function() {
 	TweenMax.to(startScreen, 2, {autoAlpha:0 , ease: Power2.easeInOut});
 	
 })
-
+}
 //Start sound on ios
 StartAudioContext(Tone.context, '#startScreen').then(function(){
     //started
@@ -255,7 +256,7 @@ body.addEventListener('touchstart', preventZoom);
 
 
 //Spacebar event 
-document.body.onkeyup = function(e){
+document.body.onkeydown = function(e){
     if(e.keyCode == 65){
         bgTones('C','E','G');
         TweenMax.to(screen, .1, {backgroundColor:'#A3E9B8', ease: Linear.easeInOut})
@@ -271,6 +272,6 @@ document.body.onkeyup = function(e){
         TweenMax.to(screen, .1, {backgroundColor:'#97D7E7', ease: Linear.easeInOut})
         TweenMax.to(screen, 1, {delay:1, backgroundColor:'#E5E5E5', ease: Linear.easeInOut})
     }
-
+   
 }
 
