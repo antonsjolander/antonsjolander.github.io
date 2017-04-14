@@ -235,7 +235,7 @@ startScreen.addEventListener('click', function() {
 //     //started
 // })
 
-startScreen..addEventListener('touchend', () => {
+startScreen.addEventListener('touchend', () => {
   const audioContext = createAudioContext()
   
   // now you can use this context for playback
