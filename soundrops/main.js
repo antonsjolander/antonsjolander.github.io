@@ -28,7 +28,7 @@ var pingPong = new Tone.PingPongDelay("4n", 0.2).toMaster();
 var filter = new Tone.Filter(200, "lowpass");
 var polySynth = new Tone.PolySynth(6, Tone.Synth).connect(reverb, filter, pingPong);
 var polySynth_2 = new Tone.PolySynth(6, Tone.Synth).connect(reverb, filter, pingPong);
-		
+const createAudioContext = require('ios-safe-audio-context')		
 		
 		
 
@@ -230,9 +230,15 @@ startScreen.addEventListener('click', function() {
 	
 })
 }
-//Start sound on ios
-StartAudioContext(Tone.context, '#startScreen').then(function(){
-    //started
+// //Start sound on ios
+// StartAudioContext(Tone.context, '#startScreen').then(function(){
+//     //started
+// })
+
+startScreen..addEventListener('touchend', () => {
+  const audioContext = createAudioContext()
+  
+  // now you can use this context for playback
 })
 
 body.onfocus = function(){return false;}
