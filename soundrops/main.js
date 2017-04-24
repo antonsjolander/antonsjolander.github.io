@@ -32,7 +32,7 @@ const createAudioContext = require('ios-safe-audio-context')
 		
 		
 
-polySynth.volume.value = -35;
+polySynth.volume.value = -40;
 polySynth.set({
 	"oscillator" : {
 	"type" : "sine",
@@ -46,7 +46,7 @@ polySynth.set({
 	}
     }, 'polyphony', 7)
 
-polySynth_2.volume.value = -35;
+polySynth_2.volume.value = -40;
 polySynth_2.set({
 	"oscillator" : {
 	"type" : "sine",
@@ -109,17 +109,16 @@ function createCirc(x, y) {
 	var circleSize = getRandomInt(5, 500)
 	screen.appendChild(circle);
 	circle.style.borderRadius = '50%';
-	circle.style.backgroundImage = 'linear-gradient(' + randomColor({luminosity: 'light', hue: 'random'}) + ', ' + randomColor({luminosity: 'light', hue: 'random'}) + ')'; ;
+	circle.style.backgroundColor = randomColor({luminosity: 'light', hue: 'random'});
 	circle.style.position = "absolute"
 	circle.style.width = circleSize + "px"
 	circle.style.height = circleSize + "px"
 	circle.style.top = y - (circleSize / 2) + "px";
 	circle.style.left = x - (circleSize / 2) + "px";
 	circle.style.blendMode = "multiply"
-	circle.style.boxShadow = "-1px -1px 20px rgba(0,0,0,0.1)"
 	//Circle animation	
 	TweenMax.from(circle, 1, {opacity:0, scale: 0.8, ease: Power1.easeOut})
-	TweenMax.to(circle, 20, {delay:1, opacity:0, scale:0 , ease: Power3.easeInOut, onComplete: removeDiv} )
+	TweenMax.to(circle, 5, {delay:1, opacity:0, scale:0 , ease: Power3.easeInOut, onComplete: removeDiv} )
 			
 	function removeDiv() {
 		circle.remove();
@@ -170,7 +169,7 @@ function mobileChords() {
 window.addEventListener('resize', function() {
 	var WIDTH = window.innerWidth;
 	var HEIGHT = window.innerHeight;
-	console.log("width" + WIDTH)
+
 	screen.style.width = WIDTH + "px";
 	screen.style.height = HEIGHT + "px";
 	startScreen.style.width = WIDTH + "px";
