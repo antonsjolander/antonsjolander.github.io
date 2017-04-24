@@ -109,8 +109,9 @@ function createCirc(x, y) {
 	var circleSize = getRandomInt(5, 500)
 	screen.appendChild(circle);
 	circle.style.borderRadius = '50%';
-	circle.style.backgroundColor = randomColor({luminosity: 'light', hue: 'random'});
+	circle.style.backgroundImage = 'linear-gradient(' + randomColor({luminosity: 'light', hue: 'random'}) + ', ' + randomColor({luminosity: 'light', hue: 'random'}) + ')'; ;
 	circle.style.position = "absolute"
+	circle.style.boxShadow = "-1px -1px 20px rgba(0,0,0,0.1)"
 	circle.style.width = circleSize + "px"
 	circle.style.height = circleSize + "px"
 	circle.style.top = y - (circleSize / 2) + "px";
@@ -118,7 +119,7 @@ function createCirc(x, y) {
 	circle.style.blendMode = "multiply"
 	//Circle animation	
 	TweenMax.from(circle, 1, {opacity:0, scale: 0.8, ease: Power1.easeOut})
-	TweenMax.to(circle, 5, {delay:1, opacity:0, scale:0 , ease: Power3.easeInOut, onComplete: removeDiv} )
+	TweenMax.to(circle, 20, {delay:1, opacity:0, scale:0 , ease: Power3.easeInOut, onComplete: removeDiv} )
 			
 	function removeDiv() {
 		circle.remove();
